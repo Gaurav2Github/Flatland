@@ -28,29 +28,7 @@
 				
 				<p>{{product.description | limitTo:70}}</p>
 				<p>{{product.postedon | date:'MM/dd/yyy @ h:mma'}}</p>
-				<section ng-controller="PanelController as panel">
-					<ul class="nav nav-pills">
-						<li ng-class="{active:panel.isSelected(1)}">
-							<a href ng-click="panel.selectTab(1)">Description</a>
-						</li>
-						<li ng-class="{active:panel.isSelected(2)}">
-							<a href ng-click="panel.selectTab(2)">Specifications</a>
-						</li>
-						<li ng-class="{active:panel.isSelected(3)}">
-							<a href ng-click="panel.selectTab(3)">Reviews</a>
-						</li>
-					</ul>
-				
-					<div class="panel" ng-show="panel.isSelected(1)">
-						<product-description ng-show="panel.isSelected(1)"></product-description>
-					</div>
-					<div class="panel" ng-show="panel.isSelected(2)" product-specs>
-					</div>
-					<div class="panel" ng-show="panel.isSelected(3)">
-						<product-reviews ng-show="panel.isSelected(3)></product-reviews>
-					</div>
-
-				</section>
+				<product-panels></product-panels>
 				<button ng-show="product.canPurchase">Add to Cart</button>
 			</li>
 		</ul>

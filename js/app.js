@@ -8,6 +8,7 @@
     {
       name: 'Azurite',
       description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
+	  canPurchase: true,
       shine: 8,
       price: 110.50,
       rarity: 7,
@@ -38,6 +39,7 @@
     }, {
       name: 'Bloodstone',
       description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however.",
+	  canPurchase: false,
       shine: 9,
       price: 22.90,
       rarity: 6,
@@ -68,6 +70,7 @@
       }, {
         name: 'Zircon',
         description: "Zircon is our most coveted and sought after gem. You will pay much to be the proud owner of this gorgeous and high shine gem.",
+		canPurchase: true,
         shine: 70,
         price: 1100,
         rarity: 2,
@@ -250,7 +253,22 @@
     };
   });
 
-
+app.directive('productPanels', function(){
+	return{
+		restrict: 'E',
+		templateUrl: 'templates/product-panels.html',
+		controller: function(){
+			this.tab = 1;
+			this.selectTab = function(setTab){
+				this.tab = setTab;
+			};
+			this.isSelected = function(checkTab){
+				return this.tab === checkTab;
+			};
+		}, 
+		controllerAs: 'panel'
+	};
+});
 
 
 })();
