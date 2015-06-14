@@ -245,7 +245,7 @@
 
 	app.directive('productSpecs', function(){
     return{
-      restrict: 'E',
+      restrict: 'A',
       templateUrl: 'templates/product-specs.html'
     };
   });
