@@ -243,6 +243,13 @@
     };
   });
 
+	app.directive('productSpecs', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'templates/product-specs.html'
+    };
+  });
+
 
 
 
