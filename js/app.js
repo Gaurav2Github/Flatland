@@ -236,6 +236,14 @@
     };
   });
 
+	app.directive('productReviews', function(){
+    return{
+      restrict: 'E',
+      templateUrl: 'templates/product-reviews.html'
+    };
+  });
+
+
 
 
 })();
