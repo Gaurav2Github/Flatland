@@ -14,17 +14,7 @@
 					{{product.name | uppercase}}
 					<em class="pull-right">{{product.price | currency}}</em>
 				</h3>
-				<div class="gallery" | ng-show="product.images.length">
-					<div class="img-wrap">
-						<img ng-src="{{product.images[0].full}}">
-					</div>
-					<ul class="img-thumbnails clearfix">
-						<li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-							<img ng-src="{{image.thumb}}">
-						</li>
-					</ul>
-
-				</div>
+				<product-gallery></product-gallery>
 				
 				<p>{{product.description | limitTo:70}}</p>
 				<p>{{product.postedon | date:'MM/dd/yyy @ h:mma'}}</p>
